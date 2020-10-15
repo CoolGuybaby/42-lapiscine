@@ -1,1 +1,1 @@
-iconfig | grep '\tether' | sed 's/ether//g' | sed 's/[[:space:]]//g'
+ifconfig | grep '\tether' | sed 's/ether//g' | sed 's/[[:space:]]//g'
