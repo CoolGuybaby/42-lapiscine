@@ -6,14 +6,14 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 07:24:21 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/17 18:19:21 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/18 17:59:29 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void		rush(int x, int y);
 
-int		main(void)
+int			main(void)
 {
-	rush(5, 3);
+	rush(3, 1);
 	return (0);
 }

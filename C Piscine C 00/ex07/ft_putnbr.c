@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush02.c                                           :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 18:03:53 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/17 19:03:05 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/18 11:27:18 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/18 13:58:57 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_putchar(char ch);
+#include <unistd.h>
 
-void		rush(int x, int y)
+void		ft_putchar(char ch)
 {
-	int r_ind;
-	int c_ind;
-	char *preset = "ABAB BCBC";
+	write(1, &ch, 1);
+}
 
-	r_ind = 0;
-	while (r_ind < y)
+void		ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
 	{
-		c_ind = 0;
-		while (c_ind < x)
+		ft_putnbr(nb / 10);
+		ft_putchar(8 + 48);
+	}
+	else if (nb < 0)
+	{
+		ft_putchar('-');
+		ft_putnbr(-nb);
+	}
+	else
+	{
+		if (nb > 9)
 		{
-			ft_putchar(preset[((r_ind != 0) + (r_ind == y - 1)) * 3 + ((c_ind != 0) + (c_ind == x - 1))]);
-			++c_ind;
+			ft_putnbr(nb / 10);
 		}
-		ft_putchar('\n');
-		++r_ind;
+		ft_putchar(nb % 10 + 48);
 	}
 }
