@@ -1,30 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 20:34:17 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/19 11:07:37 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/19 12:17:14 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/19 12:17:16 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 
-void		ft_putchar(char ch)
-{
-	write(1, &ch, 1);
-}
-
-void		ft_print_reverse_alphabet(void)
-{
-	char alphabet;
-
-	alphabet = 'z';
-	while (alphabet >= 'a')
-	{
-		ft_putchar(alphabet);
-		--alphabet;
-	}
-}
