@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 17:11:13 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/21 18:31:13 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/22 10:01:48 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/22 10:02:16 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ unsigned int		ft_strlcpy(char *dest, char *src, unsigned int size)
 		++src;
 		++index;
 	}
-	*(dest + index) = '\0';
+	*dest = '\0';
 	while (*src)
 	{
 		++src;
