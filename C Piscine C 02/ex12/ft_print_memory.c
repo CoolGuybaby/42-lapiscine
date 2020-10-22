@@ -6,20 +6,20 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 10:03:02 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/22 10:51:29 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/22 22:46:24 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void		ft_calc_buff(unsigned int num, int radix, int *buff, int index)
+void		ft_calc_buff(long long num, int radix, int *buff, int index)
 {
-	if (num > (unsigned int)radix - 1)
+	if (num > (long long)radix - 1)
 		ft_calc_buff(num / radix, radix, buff, index + 1);
 	*(buff + index) = num % radix;
 }
 
-void		ft_puthex(unsigned int num, int radix, int c_cnt)
+void		ft_puthex(long long num, int radix, int c_cnt)
 {
 	int index;
 	int buff[16];
@@ -47,13 +47,13 @@ void		ft_print_curr(void *entry, unsigned int size, char *curr)
 {
 	int index;
 
-	ft_puthex((unsigned int)curr, 16, 16);
+	ft_puthex((long long)curr, 16, 16);
 	write(1, ": ", 2);
 	index = -1;
 	while (++index < 16)
 	{
 		if ((void *)curr + index < entry + size)
-			ft_puthex((unsigned int)*(curr + index), 16, 2);
+			ft_puthex((long long)*(curr + index), 16, 2);
 		else
 			write(1, "  ", 2);
 		if (index % 2 == 1)
