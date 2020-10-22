@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 18:35:18 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/21 18:53:03 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/22 14:11:52 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void		ft_putchar(char ch)
 	write(1, &ch, 1);
 }
 
-void		ft_puthex(char ch)
+void		ft_puthex(unsigned char ch)
 {
 	ft_putchar('\\');
 	ft_putchar("0123456789abcdef"[ch / 16]);
 	ft_putchar("0123456789abcdef"[ch % 16]);
 }
 
-int			ft_printable(char ch)
+int			ft_printable(unsigned char ch)
 {
 	if (ch >= 32 && ch <= 126)
 		return (1);
@@ -33,12 +33,15 @@ int			ft_printable(char ch)
 
 void		ft_putstr_non_printable(char *str)
 {
+	unsigned char		cur;
+
 	while (*str)
 	{
-		if (ft_printable(*str))
-			ft_putchar(*str);
+		cur = (unsigned char)*str;
+		if (ft_printable(cur))
+			ft_putchar((char)cur);
 		else
-			ft_puthex(*str);
+			ft_puthex(cur);
 		++str;
 	}
 }
