@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 10:28:24 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 18:27:18 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/24 18:59:05 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include "constraint.h"
 #include "is.h"
 #define BASENUM 64
-
-#include <stdio.h>
 
 int		**g_grid;
 t_cstr	g_cstr[4];
@@ -31,7 +29,7 @@ int		main(int argc, char **argv)
 	is_error = (argc != 2);
 	if (!is_error)
 	{
-		is_error = ft_is_separatable(argv[1]);
+		is_error = ft_is_separatable(argv[1]) || ft_is_overflow(argv[1]);
 		if (!is_error)
 		{
 			nbr_cnt = ft_count_input(argv[1]);
@@ -39,9 +37,7 @@ int		main(int argc, char **argv)
 			is_error = (grid_size < 3 || grid_size > 42
 					|| nbr_cnt != grid_size * 4);
 			if (!is_error)
-			{
 				is_error = ft_init_sol(grid_size, argv[1]);
-			}
 		}
 	}
 	if (is_error)
