@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   math.c                                             :+:      :+:    :+:   */
+/*   constraint.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/24 10:44:20 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 11:02:53 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/24 14:28:39 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/24 15:42:47 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "math.h"
-#include "boolean.h"
-#define BASENUM 64
+#ifndef CONSTRAINT_H
+# define CONSTRAINT_H
+# define UP 0
+# define DOWN 1
+# define LEFT 2
+# define RIGHT 3
 
-t_bool bTable[BASENUM];
+typedef struct	s_cstr {
+	int	size;
+	int	*val;
+}				t_cstr;
 
-double		ft_sqrt(double nbr)
-{
-	int		index;
-	double	x;
+t_cstr			ft_create_cstr(char *str, int offset, int size);
 
-	index = -1;
-	x = 2;
-	while (++index < 10)
-	{
-		x = (x + (nbr / x)) / 2;
-	}
-	return (x);
-}
-
-void		ft_square_table(void)
-{
-	int		index;
-
-	index = -1;
-	while (++index < BASENUM)
-	{
-		bTable[index * index % BASENUM] = 1;
-	}
-}
+#endif

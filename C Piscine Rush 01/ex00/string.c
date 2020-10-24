@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 10:21:33 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 10:24:26 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/24 15:32:41 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int			ft_strlen(char *str)
 
 void		ft_write_str(char *str)
 {
-	while(*str)
+	while (*str)
 	{
 		write(1, str++, 1);
 	}

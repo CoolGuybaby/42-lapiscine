@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 10:58:16 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 11:22:02 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/24 14:52:39 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ void		ft_print_grid(int **grid, int grid_size)
 		while (++col < grid_size)
 		{
 			ft_write_char(grid[row][col] + 48);
-			if(col != grid_size - 1)
+			if (col != grid_size - 1)
 				ft_write_char(' ');
 		}
-		ft_write_char('\n');
+		if (row != grid_size - 1)
+			ft_write_char('\n');
 	}
 }

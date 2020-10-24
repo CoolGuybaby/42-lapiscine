@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   math.h                                             :+:      :+:    :+:   */
+/*   solution.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/24 10:34:39 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 10:55:42 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/24 15:00:31 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/24 15:36:13 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATH_H
-# define MATH_H
+#ifndef SOLUTION_H
+# define SOLUTION_H
 # include "boolean.h"
 
-double		ft_sqrt(double nbr);
+int			ft_count_input(char *str);
 
-void		ft_square_table(void);
+int			**ft_create_grid(int grid_size);
+
+void		ft_free_grid(int **grid, int grid_size);
+
+t_bool		ft_init_sol(int grid_size, char *str);
 
 #endif
