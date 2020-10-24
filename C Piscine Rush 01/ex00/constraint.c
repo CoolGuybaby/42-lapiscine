@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 14:35:42 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 15:42:24 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/24 18:27:20 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,26 @@
 t_cstr		ft_create_cstr(char *str, int offset, int size)
 {
 	int		index;
+	int		acc;
 	t_cstr	constraint;
 
+	index = 0;
 	constraint.size = size;
 	constraint.val = (int *)malloc(sizeof(int) * size);
-	index = 0;
-	while (index < size)
+	while (*str && index < size)
 	{
-		if (!*str)
-			break ;
-		if (ft_is_numeric(*str))
+		acc = 0;
+		while (*str && ft_is_whitespace(*str))
+			++str;
+		while (*str && ft_is_numeric(*str))
 		{
-			if (offset)
-				--offset;
-			else
-			{
-				constraint.v[index] = *str - 48;
-				++index;
-			}
+			acc *= 10;
+			acc += (*str++ - 48);
 		}
+		if (offset)
+			--offset;
+		else
+			constraint.val[index++] = acc;
 		++str;
 	}
 	return (constraint);
