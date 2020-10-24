@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 14:55:33 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 20:17:01 by dsong            ###   ########.fr       */
+/*   Updated: 2020/10/24 21:46:51 by dsong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,18 @@ int			**ft_create_grid(int grid_size)
 	grid = NULL;
 	grid = (int **)malloc(sizeof(int *) * grid_size);
 	row = -1;
+	if (grid == NULL)
+		return (NULL);
 	while (++row < grid_size)
 	{
 		grid[row] = (int *)malloc(sizeof(int) * grid_size);
+		if (grid[row] == NULL)
+		{
+			while (--row >= 0)
+				free(grid[row]);
+			free(grid);
+			return (NULL);
+		}
 		col = -1;
 		while (++col < grid_size)
 			grid[row][col] = 0;
@@ -89,6 +98,8 @@ t_bool		ft_init_sol(int grid_size, char *str)
 	if (!ft_validate_cstr(grid_size))
 		return (1);
 	g_grid = ft_create_grid(grid_size);
+	if (g_grid == NULL)
+		return (1);
 	dfs(0, 0, grid_size);
 	ft_free_grid(grid_size);
 	if (!g_finish)
