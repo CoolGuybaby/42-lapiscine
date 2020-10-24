@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 14:55:33 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 18:13:28 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/24 20:17:01 by dsong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 #include "print_grid.h"
 #include "validation.h"
 #include "is.h"
+#include "logic.h"
 
 extern	int		**g_grid;
 extern	t_cstr	g_cstr[4];
+extern	t_bool	g_finish;
 
 int			ft_count_input(char *str)
 {
@@ -50,6 +52,7 @@ int			**ft_create_grid(int grid_size)
 	int		col;
 	int		**grid;
 
+	grid = NULL;
 	grid = (int **)malloc(sizeof(int *) * grid_size);
 	row = -1;
 	while (++row < grid_size)
@@ -68,25 +71,27 @@ void		ft_free_grid(int grid_size)
 
 	index = -1;
 	while (++index < grid_size)
-		free(g_grid[index]);
-	free(g_grid);
+	{
+		if (g_grid[index])
+			free(g_grid[index]);
+	}
+	if (g_grid)
+		free(g_grid);
 }
 
 t_bool		ft_init_sol(int grid_size, char *str)
 {
-	t_bool	is_possible;
 	int		index;
 
 	index = -1;
 	while (++index < 4)
 		g_cstr[index] = ft_create_cstr(str, grid_size * index, grid_size);
-	g_grid = ft_create_grid(grid_size);
 	if (!ft_validate_cstr(grid_size))
 		return (1);
-	// solution that returns bool
-	// is_possible = ();
-	if (is_possible)
-		ft_print_grid(grid_size);
+	g_grid = ft_create_grid(grid_size);
+	dfs(0, 0, grid_size);
 	ft_free_grid(grid_size);
+	if (!g_finish)
+		return (1);
 	return (0);
 }

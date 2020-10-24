@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 10:28:24 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 18:59:05 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/24 20:51:11 by dsong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 #include "solution.h"
 #include "constraint.h"
 #include "is.h"
+#include <unistd.h>
 #define BASENUM 64
 
 int		**g_grid;
 t_cstr	g_cstr[4];
+t_bool	g_finish;
 
 int		main(int argc, char **argv)
 {
@@ -26,6 +28,9 @@ int		main(int argc, char **argv)
 	int		nbr_cnt;
 	int		grid_size;
 
+	g_finish = false;
+	g_grid = NULL;
+	grid_size = 0;
 	is_error = (argc != 2);
 	if (!is_error)
 	{
@@ -41,7 +46,7 @@ int		main(int argc, char **argv)
 		}
 	}
 	if (is_error)
-		ft_write_str("ERROR OCCURED ON RUNNING TIME");
+		ft_write_str("Error");
 	ft_write_char('\n');
 	return (0);
 }
