@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 14:55:33 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 21:46:51 by dsong            ###   ########.fr       */
+/*   Updated: 2020/10/24 22:10:10 by dsong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,14 @@ t_bool		ft_init_sol(int grid_size, char *str)
 
 	index = -1;
 	while (++index < 4)
+	{
 		g_cstr[index] = ft_create_cstr(str, grid_size * index, grid_size);
+		if (g_cstr[index].val == NULL)
+		{
+			ft_free_cstr();
+			return (1);
+		}
+	}
 	if (!ft_validate_cstr(grid_size))
 		return (1);
 	g_grid = ft_create_grid(grid_size);
@@ -102,6 +109,7 @@ t_bool		ft_init_sol(int grid_size, char *str)
 		return (1);
 	dfs(0, 0, grid_size);
 	ft_free_grid(grid_size);
+	ft_free_cstr();
 	if (!g_finish)
 		return (1);
 	return (0);
