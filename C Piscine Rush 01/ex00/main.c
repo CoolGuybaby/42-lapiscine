@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 10:28:24 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 21:44:40 by dsong            ###   ########.fr       */
+/*   Updated: 2020/10/25 16:56:51 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		main(int argc, char **argv)
 		{
 			nbr_cnt = ft_count_input(argv[1]);
 			grid_size = nbr_cnt / 4;
-			is_error = (grid_size < 3 || grid_size > 9
+			is_error = (grid_size < 3 || grid_size > 42
 					|| nbr_cnt != grid_size * 4);
 			if (!is_error)
 				is_error = ft_init_sol(grid_size, argv[1]);

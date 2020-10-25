@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/25 01:57:57 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/25 13:35:46 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/25 13:36:16 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/25 13:37:39 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	unsigned int	index;
+#include <unistd.h>
 
-	index = 0;
-	while (*dest++)
-		;
-	if (size > 0)
-	{
-		while (index < size - 1 && *src)
-		{
-			*dest = *src;
-			++dest;
-			++src;
-			++index;
-		}
-		*dest = '\0';
-	}
-	while (*src)
-	{
-		++src;
-		++index;
-	}
-	return (index);
+void		ft_putstr(char *str)
+{
+	while (*str)
+		write(1, str++, 1);
 }

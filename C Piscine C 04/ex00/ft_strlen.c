@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/25 01:57:57 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/25 13:35:46 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/25 13:23:39 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/25 13:34:14 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+int		ft_strlen(char *str)
 {
-	unsigned int	index;
+	int index;
 
-	index = 0;
-	while (*dest++)
-		;
-	if (size > 0)
+	while (*str)
 	{
-		while (index < size - 1 && *src)
-		{
-			*dest = *src;
-			++dest;
-			++src;
-			++index;
-		}
-		*dest = '\0';
-	}
-	while (*src)
-	{
-		++src;
 		++index;
+		++str;
 	}
 	return (index);
 }
