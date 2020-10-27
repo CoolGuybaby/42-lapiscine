@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 14:46:43 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/26 15:42:19 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/27 14:14:54 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ int		ft_is_valid(char *base)
 		if (ft_is_in_string(*temp++, " \n\t\v\r\f+-"))
 			return (0);
 	pivot_1 = -1;
-	while (pivot_1 < temp - base - 1)
+	while (++pivot_1 < temp - base - 1)
 	{
 		pivot_2 = pivot_1;
 		while (++pivot_2 < temp - base)
-			if(*(base + pivot_1) == *(base + pivot_2))
+			if (*(base + pivot_1) == *(base + pivot_2))
 				return (0);
 	}
 	return (1);
@@ -67,7 +67,7 @@ int		ft_convert_char(char ch, char *base)
 	return (-1);
 }
 
-int		ft_atoi_base(char *str, char* base)
+int		ft_atoi_base(char *str, char *base)
 {
 	int		radix;
 	int		sign;
@@ -77,18 +77,18 @@ int		ft_atoi_base(char *str, char* base)
 	radix = ft_strlen(base);
 	sign = 1;
 	result = 0;
-	if(!ft_is_valid(base))
+	if (!ft_is_valid(base))
 		return (0);
 	while (ft_is_in_string(*str, " \n\t\v\r\f"))
 		++str;
-	while (ft_is_in_string(*str, ""))
+	while (ft_is_in_string(*str, "+-"))
 		if (*str++ == '-')
 			sign *= -1;
-	while ((converted = ft_convert_char(*str,base)) == -1)
+	while ((converted = ft_convert_char(*str, base)) != -1)
 	{
 		result *= radix;
 		result += converted;
 		++str;
 	}
-	return (result * minus);
+	return (result * sign);
 }
