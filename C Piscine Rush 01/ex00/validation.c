@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 15:40:10 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 18:14:23 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/27 15:33:59 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_bool		ft_validate_cstr(int grid_size)
 	{
 		if (g_cstr[UP].val[index] + g_cstr[DOWN].val[index] > max_val)
 			return (0);
-		if (g_cstr[UP].val[index] + g_cstr[DOWN].val[index] > max_val)
+		if (g_cstr[LEFT].val[index] + g_cstr[RIGHT].val[index] > max_val)
 			return (0);
 	}
 	return (1);

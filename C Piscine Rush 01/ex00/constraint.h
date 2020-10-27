@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 14:28:39 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 22:07:38 by dsong            ###   ########.fr       */
+/*   Updated: 2020/10/27 18:29:48 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # define RIGHT 3
 
 typedef struct	s_cstr {
-	int	size;
 	int	*val;
 }				t_cstr;
 

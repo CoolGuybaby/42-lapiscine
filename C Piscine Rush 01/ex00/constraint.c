@@ -6,11 +6,12 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/24 14:35:42 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/24 22:07:50 by dsong            ###   ########.fr       */
+/*   Updated: 2020/10/27 18:29:35 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <unistd.h>
 #include "constraint.h"
 #include "is.h"
 
@@ -23,8 +24,9 @@ t_cstr		ft_create_cstr(char *str, int offset, int size)
 	t_cstr	constraint;
 
 	index = 0;
-	constraint.size = size;
 	constraint.val = (int *)malloc(sizeof(int) * size);
+	if (constraint.val == NULL)
+		return (NULL);
 	while (*str && index < size)
 	{
 		acc = 0;
