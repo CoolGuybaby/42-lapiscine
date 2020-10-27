@@ -6,13 +6,16 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 01:06:08 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/25 01:22:03 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/27 12:18:47 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strcmp(char *s1, char *s2)
 {
-	while (*s1 && (*s1++ == *s2++))
-		;
+	while (*s1 && *s2 && (*s1 == *s2))
+	{
+		++s1;
+		++s2;
+	}
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
