@@ -6,11 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 00:07:56 by jseo              #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2020/10/29 20:41:21 by jseo             ###   ########.fr       */
-=======
-/*   Updated: 2020/10/29 11:44:39 by jseo             ###   ########.fr       */
->>>>>>> e2fcb4d095d2ad16bb6e984e0b68f57d24d3a299
+/*   Updated: 2020/10/29 20:58:12 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +50,9 @@ int		main(void)
 		//printf("%d: %d\n", n_6, ft_is_prime(n_6));
 
 	int n_7 = -10;
-	while (n_7++ < 100)
+	while (n_7++ < 500)
 		printf("%d: %d\n", n_7, ft_find_next_prime(n_7));
 	
-<<<<<<< HEAD
 	//printf("%d\n", ft_ten_queens_puzzle());
-=======
-	//printf("%d\n", ft_ten_queens_puzzle());	
-	
->>>>>>> e2fcb4d095d2ad16bb6e984e0b68f57d24d3a299
 	return (0);
 }
