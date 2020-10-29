@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 18:22:34 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/29 00:24:34 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/29 11:44:49 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ int		main(void)
 	//char arr4[7] = " Jseo\n";
 	//printf("%s", ft_strcat(arr3, arr4));
 
-	char arr1[12] = "Hello";
-	char arr2[7] = " Jseo\n";
-	printf("%s\n", strncat(arr1, arr2, 4));
-	char arr3[12] = "Hello";
-	char arr4[7] = " Jseo\n";
-	printf("%s\n", ft_strncat(arr3, arr4, 4));
+	//char arr1[12] = "Hello";
+	//char arr2[7] = " Jseo\n";
+	//printf("%s\n", strncat(arr1, arr2, 4));
+	//char arr3[12] = "Hello";
+	//char arr4[7] = " Jseo\n";
+	//printf("%s\n", ft_strncat(arr3, arr4, 4));
 	
 	//char arr1[12] = "aab\n";
 	//char arr2[7] = "ab";

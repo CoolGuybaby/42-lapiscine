@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 13:47:48 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/27 15:00:25 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/29 11:44:18 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void)
 	//char *str = "This is good to go!\n";
 	//ft_putstr(str);
 	
-	printf("%d\n", ft_atoi(" 	+--++---123456789"));
+	//printf("%d\n", ft_atoi(" 	+--++---123456789"));
 
 	//ft_putnbr_base(40, "0123456789abcdef");
 	
