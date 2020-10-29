@@ -6,12 +6,11 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 15:35:59 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/28 17:04:46 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/29 09:11:35 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 int			ft_validate_pos(int *buffer, int row)
 {
