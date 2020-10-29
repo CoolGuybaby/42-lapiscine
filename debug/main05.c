@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 00:07:56 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/28 16:49:16 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/29 11:44:39 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int		main(void)
 	//while (n_7++ < 100)
 		//printf("%d: %d\n", n_7, ft_find_next_prime(n_7));
 	
-	printf("%d\n", ft_ten_queens_puzzle());
+	//printf("%d\n", ft_ten_queens_puzzle());	
+	
 	return (0);
 }
