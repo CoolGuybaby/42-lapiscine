@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   c07.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 21:12:44 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/29 15:39:36 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/29 15:37:40 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/29 15:45:51 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef C07_H
+# define C07_H
 
-char		*ft_strdup(char *src)
-{
-	char	*copy;
-	char	*temp;
+char		*ft_strdup(char *src);
+int		*ft_range(int min, int max);
+int		ft_ultimate_range(int **range, int min, int max);
+char		*ft_strjoin(int size, char **strs, char *sep);
 
-	temp = src;
-	while (*temp)
-		++temp;
-	copy = (char *)malloc((unsigned int)(temp - src) + 1);
-	if (!copy)
-		return (0);
-	while (*src)
-		*copy++ = *src++;
-	*copy = '\0';
-	return (copy);
-}
+#endif
