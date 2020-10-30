@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 15:36:39 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/29 15:37:16 by jseo             ###   ########.fr       */
+/*   Updated: 2020/10/30 11:59:31 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@
 
 int		main(void)
 {
-	
+	char **split;
+	split = ft_split("a s d f a s dfsadfa sd fasdf", " \n\t\r\v\f");
+	while (*split)
+	{
+		while (**split)
+			write(1, (*split)++, 1);
+		write(1, "\n", 1);
+		split++;
+	}
 	return (0);
 }
