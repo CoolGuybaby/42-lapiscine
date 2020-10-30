@@ -1,29 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*   ft_convert_base2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/26 14:46:43 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/30 02:35:11 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/30 02:16:35 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/30 05:04:05 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int			ft_strlen(char *str)
 {
-	int		index;
+	int	index;
 
 	index = 0;
 	while (*str)
 	{
-		++index;
 		++str;
+		++index;
 	}
 	return (index);
 }
 
-int		ft_is_in_string(char ch, char *str)
+int			ft_compute_length(long long nbr, int radix, int neg)
+{
+	int	length;
+
+	length = neg ? 1 : 0;
+	while (1)
+	{
+		++length;
+		if (!(nbr / (long long)radix))
+			break ;
+		nbr /= (long long)radix;
+	}
+	return (length);
+}
+
+int			ft_is_in_string(char ch, char *str)
 {
 	while (*str)
 		if (ch == *str++)
@@ -31,7 +46,7 @@ int		ft_is_in_string(char ch, char *str)
 	return (0);
 }
 
-int		ft_is_valid(char *base)
+int			ft_is_valid(char *base)
 {
 	char	*temp;
 	int		pivot_1;
@@ -54,41 +69,4 @@ int		ft_is_valid(char *base)
 				return (0);
 	}
 	return (1);
-}
-
-int		ft_convert_char(char ch, char *base)
-{
-	int	index;
-
-	index = -1;
-	while (base[++index])
-		if (base[index] == ch)
-			return (index);
-	return (-1);
-}
-
-int		ft_atoi_base(char *str, char *base)
-{
-	int		radix;
-	int		sign;
-	int		result;
-	int		converted;
-
-	radix = ft_strlen(base);
-	sign = 1;
-	result = 0;
-	if (!ft_is_valid(base))
-		return (0);
-	while (ft_is_in_string(*str, " \n\t\v\r\f"))
-		++str;
-	while (ft_is_in_string(*str, "+-"))
-		if (*str++ == '-')
-			sign *= -1;
-	while ((converted = ft_convert_char(*str, base)) != -1)
-	{
-		result *= radix;
-		result += converted;
-		++str;
-	}
-	return (result * sign);
 }
