@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:59:50 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 19:09:10 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 02:09:45 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ t_error		ft_sep_role(int argc, char **argv, char **conv, t_dict *dict)
 
 t_error		ft_exec_conv(char *conv, t_dict *dict)
 {
-	if(!*conv)
+	if (!*conv)
 		ft_err_string("TESTING\n");
-	if(!dict->valid)
+	if (!dict->valid)
 		ft_err_string("TESTING\n");
 	return (none_e);
 }
@@ -43,13 +43,13 @@ t_error		ft_exec_conv(char *conv, t_dict *dict)
 void		show_error(t_error error)
 {
 	if (error == parse)
-		ft_err_string("Parsing Error\n");
+		ft_err_string("Dict Error\n");
 	else if (error == convert)
-		ft_err_string("Converting Error\n");
+		ft_err_string("Dict Error\n");
 	else if (error == numeric)
-		ft_err_string("Numeric Error\n");
+		ft_err_string("Dict Error\n");
 	else if (error == argc)
-		ft_err_string("Argc Error\n");
+		ft_err_string("Dict Error\n");
 	else
 		return ;
 }
