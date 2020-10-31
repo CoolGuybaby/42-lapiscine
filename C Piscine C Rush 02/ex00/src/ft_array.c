@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_array.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 07:24:21 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 19:52:07 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/31 15:34:22 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/31 18:45:57 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		rush(int x, int y);
+#include "ft_array.h"
+#include "ft_string.h"
+#include "ft_ab_types.h"
+#include <stdlib.h>
 
-int			main(void)
+char	*ft_resize_array(char *origin, char *new, t_int o_len, t_int n_len)
 {
-	rush(1, 1);
-	rush(3, 1);
-	rush(1, 5);
-	rush(-1, -1);
-	rush(7, 6);
-	rush(0, 0);
-	return (0);
+	char	*dest;
+
+	dest = (char *)malloc(n_len + 1);
+	if (!dest)
+		return (0);
+	if (origin)
+		ft_strncpy(dest, origin, o_len);
+	ft_strncpy(dest + o_len, new, (t_int)(n_len - o_len));
+	return (dest);
 }

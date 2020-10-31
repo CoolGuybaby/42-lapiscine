@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 07:24:21 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 19:52:07 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/31 12:50:05 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/31 18:42:11 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		rush(int x, int y);
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-int			main(void)
-{
-	rush(1, 1);
-	rush(3, 1);
-	rush(1, 5);
-	rush(-1, -1);
-	rush(7, 6);
-	rush(0, 0);
-	return (0);
-}
+typedef	enum {
+	false = 0,
+	true = 1,
+}	t_bool;
+
+#endif

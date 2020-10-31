@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_is.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 07:24:21 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 19:52:07 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/31 12:40:41 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/31 18:47:30 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		rush(int x, int y);
+#include "ft_is.h"
+#include "ft_boolean.h"
 
-int			main(void)
+t_bool		ft_is_in_string(char ch, char *str)
 {
-	rush(1, 1);
-	rush(3, 1);
-	rush(1, 5);
-	rush(-1, -1);
-	rush(7, 6);
-	rush(0, 0);
+	while (*str)
+		if (ch == *str++)
+			return (1);
 	return (0);
+}
+
+t_bool		ft_is_numeric(char ch)
+{
+	return (ch >= '0' && ch <= '9');
+}
+
+t_bool		ft_is_whitespace(char ch)
+{
+	return (ft_is_in_string(ch, " \n\t\v\r\f"));
+}
+
+t_bool		ft_is_alphabet(char ch)
+{
+	return ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'));
 }

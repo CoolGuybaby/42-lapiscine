@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_is.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 07:24:21 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 19:52:07 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/31 12:32:30 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/31 13:04:43 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		rush(int x, int y);
+#ifndef FT_IS_H
+# define FT_IS_H
+# include "ft_boolean.h"
 
-int			main(void)
-{
-	rush(1, 1);
-	rush(3, 1);
-	rush(1, 5);
-	rush(-1, -1);
-	rush(7, 6);
-	rush(0, 0);
-	return (0);
-}
+t_bool		ft_is_in_string(char ch, char *str);
+t_bool		ft_is_numeric(char ch);
+t_bool		ft_is_whitespace(char ch);
+t_bool		ft_is_alphabet(char ch);
+
+#endif

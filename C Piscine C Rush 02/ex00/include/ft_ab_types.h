@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_ab_types.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 07:24:21 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 19:52:07 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/31 15:42:59 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/31 18:43:54 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		rush(int x, int y);
+#ifndef FT_AB_TYPES_H
+# define FT_AB_TYPES_H
 
-int			main(void)
-{
-	rush(1, 1);
-	rush(3, 1);
-	rush(1, 5);
-	rush(-1, -1);
-	rush(7, 6);
-	rush(0, 0);
-	return (0);
-}
+typedef unsigned int	t_int;
+typedef unsigned int	t_long;
+typedef unsigned char	t_char;
+
+#endif

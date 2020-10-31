@@ -1,34 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_join.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/28 21:15:52 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 18:51:19 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/31 12:18:31 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/31 18:50:53 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int			ft_strlen(char *str)
-{
-	int		index;
-
-	index = 0;
-	while (*str)
-	{
-		++index;
-		++str;
-	}
-	return (index);
-}
-
-char		*ft_strxcpy(char *dest, char *src)
-{
-	while ((*dest++ = *src++))
-		;
-	return (dest);
-}
+#include "ft_string.h"
+#include <stdlib.h>
 
 void		ft_complete_str(char *temp, int size, char **strs, char *sep)
 {

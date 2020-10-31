@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_compare.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 07:24:21 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 19:52:07 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/31 16:53:07 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/31 18:46:53 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		rush(int x, int y);
+#include "ft_compare.h"
+#include "ft_ab_types.h"
 
-int			main(void)
+int		ft_strcmp(char *s1, char *s2)
 {
-	rush(1, 1);
-	rush(3, 1);
-	rush(1, 5);
-	rush(-1, -1);
-	rush(7, 6);
-	rush(0, 0);
-	return (0);
+	while (*s1 && *s2 && (*s1 == *s2))
+	{
+		++s1;
+		++s2;
+	}
+	return (*(t_char *)s1 - *(t_char *)s2);
+}
+
+int		ft_strncmp(char *s1, char *s2, t_int n)
+{
+	while (*s1 && *s2 && n && (*s1 == *s2))
+	{
+		++s1;
+		++s2;
+		--n;
+	}
+	if (n == 0)
+		return (0);
+	return (*(t_char *)s1 - *(t_char *)s2);
 }

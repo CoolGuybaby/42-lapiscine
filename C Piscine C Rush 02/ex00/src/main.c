@@ -5,20 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 07:24:21 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 19:52:07 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/31 16:45:38 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/31 19:05:05 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		rush(int x, int y);
+#include "ft_error.h"
+#include "ft_dict.h"
+#include "ft_io.h"
 
-int			main(void)
+int	main(int argc, char **argv)
 {
-	rush(1, 1);
-	rush(3, 1);
-	rush(1, 5);
-	rush(-1, -1);
-	rush(7, 6);
-	rush(0, 0);
+	t_error	error;
+	t_dict	dict;
+	char	*conv;
+
+	error = ft_sep_role(argc, argv, &conv, &dict);
+	if (error == none_e && !dict.valid)
+		error = parse;
+	if (error != none_e)
+	{
+		show_error(error);
+		return (1);
+	}
+	error = ft_exec_conv(conv, &dict);
+	if (error == none_e)
+		ft_out_string("\n");
+	else
+	{
+		show_error(error);
+		return (1);
+	}
 	return (0);
 }

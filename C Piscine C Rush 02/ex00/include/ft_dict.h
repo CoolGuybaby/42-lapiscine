@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_dict.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 07:24:21 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 19:52:07 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/31 18:38:25 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/31 19:01:36 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		rush(int x, int y);
+#ifndef FT_DICT_H
+# define FT_DICT_H
+# include "ft_boolean.h"
+# include "ft_ab_types.h"
+# define INVALID -1
+# define ENGLISH_DICT "numbers.dict"
 
-int			main(void)
+typedef struct	s_dict
 {
-	rush(1, 1);
-	rush(3, 1);
-	rush(1, 5);
-	rush(-1, -1);
-	rush(7, 6);
-	rush(0, 0);
-	return (0);
-}
+	t_bool	valid;
+}				t_dict;
+
+t_dict	ft_fork_std_dict(void);
+t_dict	ft_fork_dict(char *path);
+
+#endif

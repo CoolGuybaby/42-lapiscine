@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_dict.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 07:24:21 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 19:52:07 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/31 18:52:25 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/31 19:01:28 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		rush(int x, int y);
+#include "ft_dict.h"
+#include <stdlib.h>
 
-int			main(void)
+t_dict		ft_fork_std_dict(void)
 {
-	rush(1, 1);
-	rush(3, 1);
-	rush(1, 5);
-	rush(-1, -1);
-	rush(7, 6);
-	rush(0, 0);
-	return (0);
+	return (ft_fork_dict(ENGLISH_DICT));
+}
+
+t_dict		ft_fork_dict(char *path)
+{
+	t_dict	dict;
+	
+	dict = (t_dict){false};
+	if(*path)
+		return (dict);
+	return (dict);
 }

@@ -1,24 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_io.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 07:24:21 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 19:52:07 by jseo             ###   ########.fr       */
+/*   Created: 2020/10/31 12:59:40 by jseo              #+#    #+#             */
+/*   Updated: 2020/10/31 19:04:26 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		rush(int x, int y);
+#include "ft_io.h"
+#include <unistd.h>
+#include <fcntl.h>
 
-int			main(void)
+void		ft_write_string_fd(int fd, char *str)
 {
-	rush(1, 1);
-	rush(3, 1);
-	rush(1, 5);
-	rush(-1, -1);
-	rush(7, 6);
-	rush(0, 0);
-	return (0);
+	while (*str)
+		write(fd, str++, 1);
+}
+
+void		ft_out_string(char *str)
+{
+	ft_write_string_fd(OUT, str);
+}
+
+void		ft_err_string(char *str)
+{
+	ft_write_string_fd(ERR, str);
+}
+
+int			ft_open_file(char *path)
+{
+	return (open(path, O_RDONLY));
+}
+
+int			ft_close_file(int fd)
+{
+	return (close(fd));
 }
