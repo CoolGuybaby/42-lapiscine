@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 18:38:25 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 18:28:54 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 18:55:53 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 # define FT_DICT_H
 # include "ft_boolean.h"
 # include "ft_ab_types.h"
-# include "ft_dict.h"
-# include "ft_dict_entry.h"
 # define INVALID -1
 # define ENGLISH_DICT "numbers.dict"
+
+typedef struct	s_dict_entry
+{
+	t_long	key;
+	char	*val;
+	t_bool	normal;
+}				t_dict_entry;
 
 typedef struct	s_dict
 {

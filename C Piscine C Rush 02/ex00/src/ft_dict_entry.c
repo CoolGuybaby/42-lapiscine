@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 17:52:39 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 18:27:12 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 19:30:16 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,20 @@
 #include "ft_dict.h"
 #include "ft_ab_types.h"
 #include "ft_boolean.h"
+#include "ft_compare.h"
+
+int			ft_resolve_index(t_dict *dict, t_long number)
+{
+	int		index;
+
+	index = 0;
+	while (index < dict->size)
+	{
+		if (dict->entry[index].key == number)
+			return (index);
+	}
+	return (NOT_FOUND);
+}
 
 void			ft_swap_entry(t_dict_entry *a, t_dict_entry *b)
 {
@@ -35,10 +49,10 @@ void			ft_update_normal(t_dict *dict)
 	{
 		entry = &dict->entry[index];
 		normal = false;
-		if (entry->val <= 20)
-			noraml = true;
-		if (entry->val > 20 || entry->val < 100)
-			if (entry->val % 10 == 0)
+		if (entry->key <= 20)
+			normal = true;
+		if (entry->key > 20 || entry->key < 100)
+			if (entry->key % 10 == 0)
 				normal = true;
 		entry->normal = normal;
 		++index;
@@ -55,11 +69,11 @@ void			ft_sort_dict_delegate(t_dict *dict, int start, int end,
 
 	entry = dict->entry;
 	i = start;
-	while (index < end)
+	while (i < end)
 	{
 		j = start;
 		swapped = false;
-		while (j < end - index)
+		while (j < end - i)
 		{
 			if ((*fn)(&entry[j], &entry[j + 1]))
 			{
@@ -87,12 +101,12 @@ void			ft_sort_dict(t_dict *dict)
 	{
 		if (dict->entry[index].val == 0)
 		{
-			zero_pose = index;
+			zero_pos = index;
 			break ;
 		}
 		++index;
 	}
-	if (zero_pose == INVALID)
+	if (zero_pos == INVALID)
 		return ;
 	ft_sort_dict_delegate(dict, zero_pos, dict->size - 1, &ft_cmp_entry_value);
 	ft_sort_dict_delegate(dict, 0, zero_pos, &ft_cmp_entry_value);

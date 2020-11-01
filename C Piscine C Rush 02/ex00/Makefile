@@ -6,7 +6,7 @@
 #    By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/31 17:45:17 by jseo              #+#    #+#              #
-#    Updated: 2020/11/01 12:54:23 by jseo             ###   ########.fr        #
+#    Updated: 2020/11/01 20:09:14 by jseo             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LDFLAGS =
 INCLUDE = -Iinclude/
 SRC_DIR = ./src
 OBJ_DIR = ./obj
-TARGET = rush02
+TARGET = rush-02
 
 SRCS = $(notdir $(wildcard $(SRC_DIR)/*.c))
 OBJS = $(SRCS:.c=.o)

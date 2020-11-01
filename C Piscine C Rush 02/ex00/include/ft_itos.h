@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_validate.c                                      :+:      :+:    :+:   */
+/*   ft_itos.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/01 02:30:46 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 11:14:49 by jseo             ###   ########.fr       */
+/*   Created: 2020/11/01 19:02:13 by jseo              #+#    #+#             */
+/*   Updated: 2020/11/01 19:30:52 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_error.h"
-#include "ft_ab_types.h"
-#include "ft_validate.h"
+#ifndef FT_ITOS_H
+# define FT_ITOS_H
+# include "ft_boolean.h"
+# include "ft_ab_types.h"
+# include "ft_dict.h"
 
-t_parse_error		ft_validate_line(char *line, t_int total)
-{
-	if (line)
-		return (none_p);
-	if (total)
-		return (none_p);
-	return (none_p);
-}
+void	ft_itos_print_if(t_bool print, t_bool *space, char *str);
+t_bool	ft_itos_short(t_dict *dict, t_long number, t_bool *space, t_bool print);
+t_bool	ft_itos(t_dict *dict, t_long number, t_bool *space, t_bool print);
+
+#endif

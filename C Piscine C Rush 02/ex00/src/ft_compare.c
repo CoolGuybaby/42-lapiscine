@@ -6,12 +6,13 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 16:53:07 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 17:35:20 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 18:52:16 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_compare.h"
 #include "ft_ab_types.h"
+#include "ft_dict_entry.h"
 
 int		ft_strcmp(char *s1, char *s2)
 {

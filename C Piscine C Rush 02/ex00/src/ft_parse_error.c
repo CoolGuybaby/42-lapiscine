@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 12:59:34 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 17:41:48 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 20:07:20 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #include "ft_error.h"
 #include "ft_dict_entry.h"
 #include "ft_ab_types.h"
+#include "ft_string.h"
+#include "ft_array.h"
+#include "ft_io.h"
+#include "ft_number.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcntl.h>
@@ -44,19 +48,19 @@ t_parse_error	ft_validate_line(t_dict_entry *entry, char *line, t_int len)
 	if (line[index] == '\n')
 		return (empty_line);
 	if (index == 0 || index >= len)
-		return (failed);
+		return (fail);
 	number = ft_strndup(line, index);
 	while (line[index] == ' ')
 		++index;
-	if (line[indeex] != ':')
-		return (failed);
+	if (line[index] != ':')
+		return (fail);
 	++index;
 	while (line[index] == ' ')
 		++index;
 	entry->key = ft_atoi_big(number);
 	entry->val = ft_clean_line(ft_strndup(line + index, len - index - 1));
 	if (ft_strlen(entry->val) == 0)
-		return (failed);
+		return (fail);
 	if (number)
 		free(number);
 	return (none_p);

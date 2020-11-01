@@ -6,13 +6,14 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 12:01:03 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 17:14:28 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 20:06:38 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_number.h"
 #include "ft_is.h"
 #include "ft_ab_types.h"
+#include "ft_io.h"
 
 int			ft_atoi(char *str)
 {
@@ -21,7 +22,7 @@ int			ft_atoi(char *str)
 
 	result = 0;
 	sign = 1;
-	while (ft_is_white_space(*str))
+	while (ft_is_whitespace(*str))
 		++str;
 	if (ft_is_operator(*str))
 		if (*str++ == '-')
@@ -39,7 +40,7 @@ t_long		ft_atoi_big(char *str)
 	t_long	result;
 
 	result = 0;
-	while (ft_is_white_space(*str))
+	while (ft_is_whitespace(*str))
 		++str;
 	while (ft_is_numeric(*str))
 	{
