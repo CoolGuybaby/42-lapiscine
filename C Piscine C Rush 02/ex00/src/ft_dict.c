@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 18:52:25 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 10:45:49 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 14:36:40 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,68 +18,43 @@
 #include "ft_io.h"
 #include "ft_boolean.h"
 #include "ft_array.h"
+#include "ft_parse_error.h"
 #include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>
-#include <unistd.h>
-
-void				ft_read_line(int fd, t_parse_error *error)
-{
-	char			buffer[SIZE_B];
-	char			*line;
-	t_int			len;
-	t_int			total;
-
-	total = 0;
-	while ((len = read(fd, buffer, SIZE_B)) > 0)
-	{
-		*error = fail;
-		if (!(line = ft_resize_array(line, buffer, total, total + len))
-				|| len == (t_int)-1)
-			break ;
-		total += len;
-		if (buffer[0] == '\n')
-		{
-			*error = ft_validate_line(line, total);
-			len = (t_int)-2;
-			break ;
-		}
-	}
-	if (len == 0)
-		*error = end_of_file;
-	if (line)
-		free(line);
-}
 
 int					ft_count_line(char *path)
 {
 	int				count;
 	int				fd;
+	t_dict_entry	*entry;
 	t_parse_error	error;
 
 	count = 0;
 	error = fail;
 	if ((fd = ft_open_file(path)) < 0)
 		return (INVALID);
+	if (!(entry = (t_dict_entry *)malloc(sizeof(t_dict_entry))))
+		return (INVALID);
 	while (1)
 	{
 		error = none_p;
-		ft_read_line(fd, &error);
+		ft_read_line(entry, fd, &error);
 		if (error == fail)
 			return (INVALID);
 		if (error == none_p)
 			++count;
-		if (error == end_of_file)
+		if (entry->str == 0 || error == end_of_file)
 			break ;
 	}
+	free(entry);
 	ft_close_file(fd);
 	return (count);
 }
 
-t_bool				ft_load_valid_line(char *path, int size)
+t_bool				ft_load_valid_line(char *path, int size, t_dict *dict)
 {
 	int				fd;
 	int				index;
+	t_dict_entry	*entry;
 	t_parse_error	error;
 
 	index = 0;
@@ -89,12 +64,13 @@ t_bool				ft_load_valid_line(char *path, int size)
 	while (index < size)
 	{
 		error = none_p;
-		ft_read_line(fd, &error);
+		entry = &dict->entry[index];
+		ft_read_line(entry, fd, &error);
 		if (error == fail)
 			return (false);
 		if (error == none_p)
 			++index;
-		if (error == end_of_file && error != empty_line)
+		if ((entry->str == 0 || error == end_of_file) && error != empty_line)
 			break ;
 	}
 	ft_close_file(fd);
@@ -110,18 +86,27 @@ t_dict				ft_fork_dict(char *path)
 {
 	int				size;
 	t_dict			dict;
-	t_dict_entry	*root;
+	t_dict_entry	*entry;
 
 	size = ft_count_line(path);
 	dict = (t_dict){path, 0, false, NULL};
-	if (!(root = (t_dict_entry *)malloc(sizeof(t_dict_entry))))
+	if (!(entry = (t_dict_entry *)malloc((size + 1) * sizeof(t_dict_entry))))
 		return (dict);
 	if (size == INVALID)
 		return (dict);
 	dict.size = size;
-	dict.entry = root;
-	dict.valid = ft_load_valid_line(path, size);
-	//if (dict.valid)
-		// create tree;	
+	dict.entry = entry;
+	dict.valid = ft_load_valid_line(path, size, &dict);
+	if (dict.valid)
+		ft_sort_dict(&dict);
 	return (dict);
+}
+
+void				ft_free_dict(t_dict *dict)
+{
+	int				index;
+
+	index = 0;
+	while (index < dict->size)
+		free(dict->entry[index++].str);
 }

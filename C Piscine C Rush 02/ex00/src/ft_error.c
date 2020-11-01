@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:59:50 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 10:51:23 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 13:01:12 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,7 @@ t_error		ft_sep_role(int argc, char **argv, char **conv, t_dict *dict)
 
 t_error		ft_exec_conv(char *conv, t_dict *dict)
 {
-	if (!*conv)
-		ft_err_string("TESTING\n");
-	if (!dict->valid)
-		ft_err_string("TESTING\n");
-	return (none_e);
+	// search to convert
 }
 
 void		show_error(t_error error)

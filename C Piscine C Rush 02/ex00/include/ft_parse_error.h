@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dict_entry.h                                    :+:      :+:    :+:   */
+/*   ft_parse_error.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 23:57:11 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 14:35:31 by jseo             ###   ########.fr       */
+/*   Created: 2020/11/01 13:01:35 by jseo              #+#    #+#             */
+/*   Updated: 2020/11/01 14:33:46 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_DICT_ENTRY_H
-# define FT_DICT_ENTRY_H
-# include "ft_ab_types.h"
-# include "ft_boolean.h"
+#ifndef FT_PARSE_ERROR_H
+# define FT_PARSE_ERROR_H
+# include "ft_dict_entry.h"
+# include "ft_error.h"
 
-typedef struct	s_dict_entry
-{
-	char	*key;
-	char	*val;
-	t_bool	normal;
-}				t_dict_entry;
+void		ft_read_line(t_dict_entry *entry, int fd, t_parse_error *error);
 
 #endif

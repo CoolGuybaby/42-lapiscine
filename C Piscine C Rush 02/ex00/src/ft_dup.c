@@ -6,26 +6,55 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 12:14:40 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 12:17:10 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 12:08:49 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include "ft_ab_types.h"
 #include <stdlib.h>
 
 char		*ft_strdup(char *src)
 {
 	char	*copy;
-	char	*temp;
+	t_int	length;
+	t_int	index;
 
-	temp = src;
-	while (*temp)
-		++temp;
-	copy = (char *)malloc((unsigned int)(temp - src) + 1);
+	length = 0;
+	index = 0;
+	while (src[index])
+		++length;
+	copy = (char *)malloc(length + 1);
 	if (!copy)
 		return (0);
-	while ((*copy++ = *src++))
-		;
-	*copy = '\0';
+	while (src[index])
+	{
+		copy[index] = src[index];
+		++index;
+	}
+	copy[index] = '\0';
+	return (copy);
+}
+
+char		*ft_strndup(char *src, t_int n)
+{
+	char	*copy;
+	t_int	length;
+	t_int	index;
+
+	length = 0;
+	index = 0;
+	while (src[length])
+		++length;
+	length = length > n ? n : length;
+	copy = (char *)malloc(length + 1);
+	if (!copy)
+		return (0);
+	while (index < length)
+	{
+		copy[index] = src[index];
+		++index;
+	}
+	copy[index] = '\0';
 	return (copy);
 }

@@ -6,7 +6,7 @@
 #    By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/31 17:45:17 by jseo              #+#    #+#              #
-#    Updated: 2020/11/01 10:24:27 by jseo             ###   ########.fr        #
+#    Updated: 2020/11/01 12:54:23 by jseo             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,8 @@ $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
 $(TARGET) : $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
 
-.PHONY : clean
-clean :
+.PHONY : fclean
+fclean :
 	rm -f $(OBJECTS) $(DEPS) $(TARGET)
 
 -include $(DEPS)

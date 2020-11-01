@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 12:40:41 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 18:47:30 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 12:08:15 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ t_bool		ft_is_numeric(char ch)
 t_bool		ft_is_whitespace(char ch)
 {
 	return (ft_is_in_string(ch, " \n\t\v\r\f"));
+}
+
+t_bool		ft_is_operator(char ch)
+{
+	return (ft_is_in_string(ch, "+-"));
 }
 
 t_bool		ft_is_alphabet(char ch)
