@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 18:52:25 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 14:36:40 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 17:26:49 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int					ft_count_line(char *path)
 			return (INVALID);
 		if (error == none_p)
 			++count;
-		if (entry->str == 0 || error == end_of_file)
+		if (entry->val == 0 || error == end_of_file)
 			break ;
 	}
 	free(entry);
@@ -70,7 +70,7 @@ t_bool				ft_load_valid_line(char *path, int size, t_dict *dict)
 			return (false);
 		if (error == none_p)
 			++index;
-		if ((entry->str == 0 || error == end_of_file) && error != empty_line)
+		if ((entry->val == 0 || error == end_of_file) && error != empty_line)
 			break ;
 	}
 	ft_close_file(fd);
@@ -108,5 +108,5 @@ void				ft_free_dict(t_dict *dict)
 
 	index = 0;
 	while (index < dict->size)
-		free(dict->entry[index++].str);
+		free(dict->entry[index++].val);
 }

@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 12:59:34 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 14:39:16 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 17:41:48 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,47 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+char			*ft_clean_line(char *str)
+{
+	int				size;
+	char			**split;
+
+	split = ft_split(str, " \n\t\v\r\f");
+	size = 0;
+	if (str)
+		free(str);
+	while (split[size])
+		++size;
+	return (ft_strjoin(size, split, " "));
+}
+
 t_parse_error	ft_validate_line(t_dict_entry *entry, char *line, t_int len)
 {
-	t_int	index;
-	char	*number;
+	t_int			index;
+	char			*number;
 
 	index = 0;
 	while (ft_is_numeric(line[index]))
 		++index;
-
+	if (line[index] == '\n')
+		return (empty_line);
+	if (index == 0 || index >= len)
+		return (failed);
+	number = ft_strndup(line, index);
+	while (line[index] == ' ')
+		++index;
+	if (line[indeex] != ':')
+		return (failed);
+	++index;
+	while (line[index] == ' ')
+		++index;
+	entry->key = ft_atoi_big(number);
+	entry->val = ft_clean_line(ft_strndup(line + index, len - index - 1));
+	if (ft_strlen(entry->val) == 0)
+		return (failed);
+	if (number)
+		free(number);
+	return (none_p);
 }
 
 void			ft_read_line(t_dict_entry *entry, int fd, t_parse_error *error)

@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 16:53:07 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 18:46:53 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 17:35:20 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,14 @@ int		ft_strncmp(char *s1, char *s2, t_int n)
 	if (n == 0)
 		return (0);
 	return (*(t_char *)s1 - *(t_char *)s2);
+}
+
+int		ft_cmp_entry_normal(t_dict_entry *a, t_dict_entry *b)
+{
+	return (a->normal > b->normal);
+}
+
+int		ft_cmp_entry_value(t_dict_entry *a, t_dict_entry *b)
+{
+	return (a->val > b->val);
 }
