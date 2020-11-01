@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 18:52:25 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 02:33:43 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 10:45:49 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 #include "ft_boolean.h"
 #include "ft_array.h"
 #include <stdlib.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 void				ft_read_line(int fd, t_parse_error *error)
 {
@@ -32,7 +35,7 @@ void				ft_read_line(int fd, t_parse_error *error)
 	{
 		*error = fail;
 		if (!(line = ft_resize_array(line, buffer, total, total + len))
-				|| read_val == (t_int)-1)
+				|| len == (t_int)-1)
 			break ;
 		total += len;
 		if (buffer[0] == '\n')
@@ -61,10 +64,10 @@ int					ft_count_line(char *path)
 	while (1)
 	{
 		error = none_p;
-		error = ft_read_line(fd, &error);
+		ft_read_line(fd, &error);
 		if (error == fail)
 			return (INVALID);
-		if (error = none_p)
+		if (error == none_p)
 			++count;
 		if (error == end_of_file)
 			break ;
@@ -86,7 +89,7 @@ t_bool				ft_load_valid_line(char *path, int size)
 	while (index < size)
 	{
 		error = none_p;
-		error = ft_read_line(fd, &error);
+		ft_read_line(fd, &error);
 		if (error == fail)
 			return (false);
 		if (error == none_p)

@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 23:57:11 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 23:58:52 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 10:36:59 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 typedef struct	s_dict_entry
 {
-	char			*l_key;
-	char			*l_val;
-	char			*r_key;
-	char			*r_val;
-	s_dict_entry	*left;
-	s_dict_entry	*middle;
-	s_dict_entry	*right;
-	s_dict_entry	*parent;
+	char				*l_key;
+	char				*l_val;
+	char				*r_key;
+	char				*r_val;
+	struct s_dict_entry	*left;
+	struct s_dict_entry	*middle;
+	struct s_dict_entry	*right;
+	struct s_dict_entry	*parent;
 }				t_dict_entry;
 
 #endif

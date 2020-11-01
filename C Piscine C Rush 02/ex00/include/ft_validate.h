@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 02:31:51 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 02:32:57 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 10:41:48 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 # include "ft_error.h"
 # include "ft_ab_types.h"
 
-t_error		ft_validate_line(char *line, t_int total);
+t_parse_error		ft_validate_line(char *line, t_int total);
 
 #endif
