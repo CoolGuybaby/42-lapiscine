@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 18:52:25 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 21:00:02 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 22:09:32 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ int					ft_count_line(char *path)
 	error = fail;
 	if ((fd = ft_open_file(path)) < 0)
 		return (INVALID);
-	if (!(entry = (t_dict_entry *)malloc(sizeof(t_dict_entry))))
-		return (INVALID);
 	while (1)
 	{
 		error = none_p;
+		if (!(entry = (t_dict_entry *)malloc(sizeof(t_dict_entry))))
+			return (INVALID);
 		ft_read_line(entry, fd, &error);
 		if (error == fail)
 			return (INVALID);
@@ -44,8 +44,8 @@ int					ft_count_line(char *path)
 			++count;
 		if (entry->val == 0 || error == end_of_file)
 			break ;
+		free(entry);
 	}
-	free(entry);
 	ft_close_file(fd);
 	return (count);
 }
@@ -90,9 +90,9 @@ t_dict				ft_fork_dict(char *path)
 
 	size = ft_count_line(path);
 	dict = (t_dict){path, 0, false, NULL};
-	if (!(entry = (t_dict_entry *)malloc((size + 1) * sizeof(t_dict_entry))))
-		return (dict);
 	if (size == INVALID)
+		return (dict);
+	if (!(entry = (t_dict_entry *)malloc((size + 1) * sizeof(t_dict_entry))))
 		return (dict);
 	dict.size = size;
 	dict.entry = entry;
@@ -108,5 +108,8 @@ void				ft_free_dict(t_dict *dict)
 
 	index = 0;
 	while (index < dict->size)
-		free(dict->entry[index++].val);
+	{
+		free(dict->entry[index].val);
+		++index;
+	}
 }

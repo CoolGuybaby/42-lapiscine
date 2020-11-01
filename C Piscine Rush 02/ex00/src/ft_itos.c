@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 19:02:07 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 20:04:06 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 22:27:47 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ t_bool	ft_itos(t_dict *dict, t_long number, t_bool *space, t_bool print)
 				if (!ft_itos(dict, mul, space, print))
 					return (false);
 			ft_itos_print_if(print, space, dict->entry[index].val);
-			if(number - mul * val == 0)
+			if (number - mul * val == 0)
 				return (true);
 			return (ft_itos(dict, number - mul * val, space, print));
 		}

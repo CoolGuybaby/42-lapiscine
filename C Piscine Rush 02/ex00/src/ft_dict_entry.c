@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 17:52:39 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 21:00:13 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 22:24:58 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,16 @@
 #include "ft_boolean.h"
 #include "ft_compare.h"
 
-int			ft_resolve_index(t_dict *dict, t_long number)
+int				ft_resolve_index(t_dict *dict, t_long number)
 {
-	int		index;
+	int				index;
 
 	index = 0;
 	while (index < dict->size)
 	{
 		if (dict->entry[index].key == number)
 			return (index);
+		++index;
 	}
 	return (NOT_FOUND);
 }

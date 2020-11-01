@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 12:59:34 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 21:23:55 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 22:18:26 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ char			*ft_clean_line(char *str)
 
 	split = ft_split(str, " \n\t\v\r\f");
 	size = 0;
-	if (str)
-		free(str);
+	free(str);
 	while (split[size])
 		++size;
 	return (ft_strjoin(size, split, " "));
@@ -61,8 +60,7 @@ t_parse_error	ft_validate_line(t_dict_entry *entry, char *line, t_int len)
 	entry->val = ft_clean_line(ft_strndup(line + index, len - index - 1));
 	if (ft_strlen(entry->val) == 0)
 		return (fail);
-	if (number)
-		free(number);
+	free(number);
 	return (none_p);
 }
 
@@ -76,10 +74,13 @@ void			ft_read_line(t_dict_entry *entry, int fd, t_parse_error *error)
 	total = 0;
 	while ((len = read(fd, buffer, SIZE_B)) > 0)
 	{
-		*error = fail;
-		if (!(line = ft_resize_array(line, buffer, total, total + len))
-				|| len == (t_int)-1)
+		if (len == (t_int)-1)
+		{
+			entry->val = 0;
+			*error = fail;
 			break ;
+		}
+		line = ft_resize_array(line, buffer, total, total + len);
 		total += len;
 		if (buffer[0] == '\n')
 		{
@@ -90,6 +91,4 @@ void			ft_read_line(t_dict_entry *entry, int fd, t_parse_error *error)
 	}
 	if (len == 0)
 		*error = end_of_file;
-	if (line)
-		free(line);
 }

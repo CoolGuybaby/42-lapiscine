@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:59:50 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 20:56:11 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 22:15:58 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "ft_number.h"
 #include "ft_io.h"
 #include "ft_itos.h"
-
 
 t_error		ft_sep_role(int argc, char **argv, char **conv, t_dict *dict)
 {
