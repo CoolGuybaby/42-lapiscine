@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:59:50 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 20:02:41 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 20:56:11 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "ft_io.h"
 #include "ft_itos.h"
 
+
 t_error		ft_sep_role(int argc, char **argv, char **conv, t_dict *dict)
 {
 	if (argc == 2)
@@ -23,7 +24,7 @@ t_error		ft_sep_role(int argc, char **argv, char **conv, t_dict *dict)
 		*dict = ft_fork_std_dict();
 		*conv = argv[1];
 	}
-	else if (argc == 2)
+	else if (argc == 3)
 	{
 		*dict = ft_fork_dict(argv[1]);
 		*conv = argv[2];
