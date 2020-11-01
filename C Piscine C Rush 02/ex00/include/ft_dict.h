@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 18:38:25 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 02:30:30 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 10:25:23 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include "ft_boolean.h"
 # include "ft_ab_types.h"
 # include "ft_dict_entry.h"
+# include "ft_error.h"
 # define INVALID -1
 # define ENGLISH_DICT "numbers.dict"
 

@@ -6,12 +6,12 @@
 #    By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/31 17:45:17 by jseo              #+#    #+#              #
-#    Updated: 2020/10/31 19:33:16 by jseo             ###   ########.fr        #
+#    Updated: 2020/11/01 10:24:27 by jseo             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS =
 LDFLAGS =
 INCLUDE = -Iinclude/
 SRC_DIR = ./src

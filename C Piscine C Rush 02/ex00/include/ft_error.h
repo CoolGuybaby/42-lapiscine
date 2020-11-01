@@ -6,13 +6,14 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:57:05 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 01:26:58 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 10:26:52 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ERROR_H
 # define FT_ERROR_H
 # include "ft_dict.h"
+# include "ft_ab_types.h"
 
 typedef enum {
 	none_e,

@@ -1,5 +1,6 @@
 obj/ft_dict.o: src/ft_dict.c include/ft_dict.h include/ft_boolean.h \
-  include/ft_ab_types.h \
+  include/ft_ab_types.h include/ft_dict_entry.h include/ft_error.h \
+  include/ft_validate.h include/ft_io.h include/ft_array.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdlib.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h \
