@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 11:59:47 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 19:59:02 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/02 20:13:52 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ t_bool		ft_parse_line(t_grid *grid, char *content, t_int length)
 	while (index < length)
 	{
 		curr = content[index];
-		if(curr != grid->conv[empty] && curr != grid->conv[obstacle] &&
+		if (curr != grid->conv[empty] && curr != grid->conv[obstacle] &&
 				curr != grid->conv[full])
 			return (false);
 		++index;

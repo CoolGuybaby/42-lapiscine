@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 11:37:43 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 19:59:11 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/02 20:13:46 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int			main(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		if(ft_parse_grid(IN, &grid))
+		if (ft_parse_grid(IN, &grid))
 			ft_process_grid(&grid, &sol);
 		else
 			ft_err_string("map error\n");
