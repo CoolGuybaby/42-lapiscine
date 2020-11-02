@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 15:59:50 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 22:15:58 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/01 22:35:55 by jiwchoi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		show_error(t_error error)
 	else if (error == convert)
 		ft_err_string("Dict Error\n");
 	else if (error == numeric)
-		ft_err_string("Dict Error\n");
+		ft_err_string("Error\n");
 	else if (error == argc)
 		ft_err_string("Dict Error\n");
 	else
