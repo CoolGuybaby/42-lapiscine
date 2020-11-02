@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:39:35 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 17:29:18 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/02 18:58:02 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct	s_sol {
 
 typedef enum {
 	empty,
-	blocked,
-	occupied
+	obstacle,
+	full,
 }	t_status;
 
 t_bool			ft_load_grid(char *path, t_grid *grid);

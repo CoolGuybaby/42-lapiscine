@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 11:59:47 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 18:35:03 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/02 19:13:24 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ t_bool		ft_parse_info(t_grid *grid, char *content, t_int length)
 	if (length != 4)
 		return (false);
 	grid->conv[empty] = content[length - 3];
-	grid->conv[blocked] = content[length - 2];
-	grid->conv[occupied] = content[length - 1];
+	grid->conv[obstacle] = content[length - 2];
+	grid->conv[full] = content[length - 1];
 	result = ft_atoi_n(conv, length - 3, &(grid->row));
 	return (result);
 }
@@ -62,8 +62,8 @@ t_bool		ft_parse_line(t_grid *grid, char *content, t_int length)
 	while (index < length)
 	{
 		curr = content[index];
-		if(curr != grid->conv[empty] && cur != grid->conv[blocked] &&
-				curr != grid->conv[occupied])
+		if(curr != grid->conv[empty] && cur != grid->conv[obstacle] &&
+				curr != grid->conv[full])
 			return (false);
 		++index;
 	}
