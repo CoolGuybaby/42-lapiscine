@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ab_types.h                                      :+:      :+:    :+:   */
+/*   ft_array.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 15:42:59 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 17:32:23 by jseo             ###   ########.fr       */
+/*   Created: 2020/11/02 13:43:39 by jseo              #+#    #+#             */
+/*   Updated: 2020/11/02 13:49:37 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_AB_TYPES_H
-# define FT_AB_TYPES_H
+#ifndef FT_ARRAY_H
+# define FT_ARRAY_H
 
-typedef unsigned int	t_int;
-typedef unsigned long	t_long;
-typedef unsigned char	t_char;
+char	*ft_resize_array(char *origin, char *new, t_int o_len, t_int n_len);
 
 #endif

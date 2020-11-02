@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ab_types.h                                      :+:      :+:    :+:   */
+/*   ft_string.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 15:42:59 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 17:32:23 by jseo             ###   ########.fr       */
+/*   Created: 2020/11/02 13:49:51 by jseo              #+#    #+#             */
+/*   Updated: 2020/11/02 17:13:36 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_AB_TYPES_H
-# define FT_AB_TYPES_H
+#include "ft_string.h"
 
-typedef unsigned int	t_int;
-typedef unsigned long	t_long;
-typedef unsigned char	t_char;
+char		*ft_strncpy(char *dest, char *src, t_int n)
+{
+	t_int	index;
+	char	*temp;
 
-#endif
+	index = 0;
+	temp = dest;
+	while (index < n)
+	{
+		*temp = *src;
+		if (*src)
+			++src;
+		++temp;
+		++index;
+	}
+	return (dest);
+}

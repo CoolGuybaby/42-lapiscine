@@ -1,20 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ab_types.h                                      :+:      :+:    :+:   */
+/*   ft_io.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 15:42:59 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 17:32:23 by jseo             ###   ########.fr       */
+/*   Created: 2020/11/02 11:40:56 by jseo              #+#    #+#             */
+/*   Updated: 2020/11/02 17:14:06 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_AB_TYPES_H
-# define FT_AB_TYPES_H
+#include "ft_io.h"
 
-typedef unsigned int	t_int;
-typedef unsigned long	t_long;
-typedef unsigned char	t_char;
+void		ft_write_string_fd(int fd, char *str)
+{
+	while (*str)
+		write(1, str++, 1);
+}
 
-#endif
+void		ft_out_string(char *str)
+{
+	ft_write_string_fd(OUT, str);
+}
+
+void		ft_err_string(char *str)
+{
+	ft_write_string_fd(ERR, str);
+}
+
+int			ft_open_file(char *path)
+{
+	return (open(path, O_RDONLY));
+}
+
+int			ft_close_file(int fd)
+{
+	return (close(fd));
+}

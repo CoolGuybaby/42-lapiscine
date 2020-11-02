@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ab_types.h                                      :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 15:42:59 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 17:32:23 by jseo             ###   ########.fr       */
+/*   Created: 2020/11/02 11:33:12 by jseo              #+#    #+#             */
+/*   Updated: 2020/11/02 11:33:45 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_AB_TYPES_H
-# define FT_AB_TYPES_H
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-typedef unsigned int	t_int;
-typedef unsigned long	t_long;
-typedef unsigned char	t_char;
+typedef enum {
+	false = 0,
+	true = 1,
+}	t_bool;
 
 #endif

@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ab_types.h                                      :+:      :+:    :+:   */
+/*   ft_is.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 15:42:59 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 17:32:23 by jseo             ###   ########.fr       */
+/*   Created: 2020/11/02 16:56:23 by jseo              #+#    #+#             */
+/*   Updated: 2020/11/02 17:02:29 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_AB_TYPES_H
-# define FT_AB_TYPES_H
+#include "ft_grid.h"
+#include "ft_boolean.h"
+#include "ft_ab_types.h"
 
-typedef unsigned int	t_int;
-typedef unsigned long	t_long;
-typedef unsigned char	t_char;
+t_bool	ft_is_numeric(char ch)
+{
+	return (ch >= '0' && ch <= '9');
+}
 
-#endif
+t_bool	ft_is_row_size_changed(t_grid *grid, t_int *row_size)
+{
+	if (*row_size == (t_int)-1)
+		*row_size = grid->col;
+	return (*row_size != grid->col);
+}

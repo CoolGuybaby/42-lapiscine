@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 21:15:09 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/30 05:03:48 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/02 14:13:25 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char		*ft_putnbr_base(int nbr, char *base)
 		converted[0] = '-';
 	while (++index < size)
 	{
-		converted[size - (!sign) - index] = base[nbr / radix];
+		converted[size - (!sign) - index] = base[nbr % radix];
 		nbr /= radix;
 	}
 	converted[size] = '\0';

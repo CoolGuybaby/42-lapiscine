@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ab_types.h                                      :+:      :+:    :+:   */
+/*   ft_number.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 15:42:59 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 17:32:23 by jseo             ###   ########.fr       */
+/*   Created: 2020/11/02 16:15:12 by jseo              #+#    #+#             */
+/*   Updated: 2020/11/02 16:56:19 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_AB_TYPES_H
-# define FT_AB_TYPES_H
+#include "ft_number.h"
+#include "ft_is.h"
 
-typedef unsigned int	t_int;
-typedef unsigned long	t_long;
-typedef unsigned char	t_char;
+t_bool	ft_atoi_n(char *conv, t_int n, t_int *result)
+{
+	t_int	index;
 
-#endif
+	index = 0;
+	*result = 0;
+	while (index < n)
+	{
+		if (ft_is_numeric(conv[index]))
+			*result = *result * 10 + (conv[index] - 48);
+		else
+			return (false);
+		++index;
+	}
+	return (true);
+}
