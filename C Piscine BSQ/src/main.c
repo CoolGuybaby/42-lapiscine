@@ -6,11 +6,12 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 11:37:43 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 19:12:11 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/02 19:54:55 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_grid.h"
+#include "ft_parse.h"
 #include "ft_io.h"
 
 void		ft_process_args(int argc, char **argv, t_grid *grid, t_sol *sol)

@@ -6,13 +6,14 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:39:35 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 18:58:02 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/02 19:53:06 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_GRID_H
 # define FT_GRID_H
 # include "ft_ab_types.h"
+# include "ft_boolean.h"
 
 typedef struct	s_grid {
 	t_int		row;

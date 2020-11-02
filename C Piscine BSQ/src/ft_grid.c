@@ -6,10 +6,12 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:10:26 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 18:29:51 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/02 19:53:29 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_grid.h"
+#include "ft_parse.h"
 #include "ft_io.h"
 
 t_bool	ft_load_grid(char *path, t_grid *grid)
