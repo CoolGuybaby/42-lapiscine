@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 21:16:47 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/03 14:10:27 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 17:44:27 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void		ft_strcpy(char *dest, char *from, char *until)
 
 char		**ft_split(char *str, char *charset)
 {
-	int	i;
+	int		i;
 	char	*from;
 	char	**bun;
 
