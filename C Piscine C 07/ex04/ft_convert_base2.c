@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/30 02:16:35 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/03 09:53:09 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 23:10:10 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int			ft_strlen(char *str)
 	return (index);
 }
 
-int			ft_compute_length(long long nbr, int radix, int neg)
+int			ft_compute_length(unsigned int nbr, int radix, int neg)
 {
 	int	length;
 
@@ -31,9 +31,9 @@ int			ft_compute_length(long long nbr, int radix, int neg)
 	while (1)
 	{
 		++length;
-		if (!(nbr / (long long)radix))
+		if (!(nbr / radix))
 			break ;
-		nbr /= (long long)radix;
+		nbr /= radix;
 	}
 	return (length);
 }

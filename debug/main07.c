@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 15:36:39 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/03 13:57:53 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 23:27:15 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,17 @@ int		main(void)
 	//strs[2] = "zxcvbnmasd";
 	//printf("%s", ft_strjoin(3, strs, "::"));
 
-	//printf("%s", ft_convert_base("28", "0123456789abcdef", "0123456789"));
+	printf("%s", ft_convert_base("0", "0123456789abcdef", "0123456789"));
 
-	char **split;
-	split = ft_split("a s d f a s dfsadfa sd fasdf", " \n\t\r\v\f");
-	while (*split)
-	{
-		while (**split)
-			write(1, (*split)++, 1);
-		write(1, "\n", 1);
-		split++;
-	}
+	//char **split;
+	//split = ft_split("a s d f a s dfsadfa sd fasdf", " \n\t\r\v\f");
+	//while (*split)
+	//{
+		//while (**split)
+			//write(1, (*split)++, 1);
+		//write(1, "\n", 1);
+		//split++;
+	//}
 	
 	return (0);
 }

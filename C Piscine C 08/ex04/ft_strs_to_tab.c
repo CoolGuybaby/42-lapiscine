@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 21:24:11 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/03 14:04:49 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 16:14:44 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int			ft_strlen(char *str)
 {
-	int	index;
+	int		index;
 
 	index = 0;
 	while (*str)
@@ -47,10 +47,10 @@ char		*ft_strdup(char *src)
 	return (copy);
 }
 
-struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
+t_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	int	index;
-	struct s_stock_str	*arr;
+	int		index;
+	t_stock_str	*arr;
 
 	index = -1;
 	while (++index < ac)
