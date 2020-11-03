@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 21:16:47 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/03 10:30:48 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 13:57:07 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,7 @@ char		**ft_split(char *str, char *charset)
 				++str;
 			g_bun[g_i] = (char *)malloc((str - g_from) + 1);
 			if (!g_bun[g_i])
-			{
-				while (--g_i >= 0)
-					free(g_bun[g_i]);
-				free(g_bun);
-			}
+				return (0);
 			ft_strcpy(g_bun[g_i++], g_from, str);
 		}
 		++str;

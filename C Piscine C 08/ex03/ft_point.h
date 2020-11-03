@@ -6,8 +6,17 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 21:23:54 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/28 21:23:55 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 11:55:50 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
+typedef struct	s_point
+{
+	int	x;
+	int	y;
+}				t_point;
+
+#endif

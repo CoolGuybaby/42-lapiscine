@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 15:36:39 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/03 10:28:34 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 13:57:53 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 int		main(void)
 {
-	char *dest = ft_strdup("Hello");
-	printf("%s", dest);
+	//char *dest = ft_strdup("Hello");
+	//printf("%s", dest);
 
 	//int index = -1;
 	//int min = 1;
@@ -47,15 +47,15 @@ int		main(void)
 
 	//printf("%s", ft_convert_base("28", "0123456789abcdef", "0123456789"));
 
-	//char **split;
-	//split = ft_split("a s d f a s dfsadfa sd fasdf", " \n\t\r\v\f");
-	//while (*split)
-	//{
-		//while (**split)
-			//write(1, (*split)++, 1);
-		//write(1, "\n", 1);
-		//split++;
-	//}
+	char **split;
+	split = ft_split("a s d f a s dfsadfa sd fasdf", " \n\t\r\v\f");
+	while (*split)
+	{
+		while (**split)
+			write(1, (*split)++, 1);
+		write(1, "\n", 1);
+		split++;
+	}
 	
 	return (0);
 }

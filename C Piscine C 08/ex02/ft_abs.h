@@ -6,8 +6,12 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 21:23:40 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/28 21:23:42 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 11:57:59 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FT_ABS_H
+# define FT_ABS_H
+# define ABS(Value) (Value < 0 ? -Value : Value)
 
+#endif

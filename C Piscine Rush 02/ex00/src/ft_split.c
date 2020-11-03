@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 12:28:32 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 02:09:36 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 13:53:01 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ char		**ft_split(char *str, char *charset)
 				while (--g_s_i >= 0)
 					free(g_s_bun[g_s_i]);
 				free(g_s_bun);
+				return (0);
 			}
 			ft_strucpy(g_s_bun[g_s_i++], g_s_from, str);
 		}
