@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 17:52:39 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/03 14:16:02 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 15:33:39 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void			ft_sort_dict(t_dict *dict)
 	zero_pos = INVALID;
 	while (index < dict->size)
 	{
-		if (dict->entry[index].key == 0)
+		if (dict->entry[index].normal == 0)
 		{
 			zero_pos = index;
 			break ;
