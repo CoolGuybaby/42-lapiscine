@@ -6,15 +6,11 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 21:16:47 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/03 13:57:07 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 14:10:27 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
-int		g_i;
-char	*g_from;
-char	**g_bun;
 
 int			ft_is_in_string(char ch, char *str)
 {
@@ -51,24 +47,24 @@ void		ft_strcpy(char *dest, char *from, char *until)
 
 char		**ft_split(char *str, char *charset)
 {
-	g_i = 0;
-	g_bun = (char **)malloc((ft_cnt(str, charset) + 1) * sizeof(char *));
-	if (!g_bun)
-		return (0);
+	int	i;
+	char	*from;
+	char	**bun;
+
+	i = 0;
+	bun = (char **)malloc((ft_cnt(str, charset) + 1) * sizeof(char *));
 	while (*str)
 	{
 		if (!ft_is_in_string(*str, charset))
 		{
-			g_from = str;
+			from = str;
 			while (*str && !ft_is_in_string(*str, charset))
 				++str;
-			g_bun[g_i] = (char *)malloc((str - g_from) + 1);
-			if (!g_bun[g_i])
-				return (0);
-			ft_strcpy(g_bun[g_i++], g_from, str);
+			bun[i] = (char *)malloc((str - from) + 1);
+			ft_strcpy(bun[i++], from, str);
 		}
 		++str;
 	}
-	g_bun[g_i] = 0;
-	return (g_bun);
+	bun[i] = 0;
+	return (bun);
 }
