@@ -6,7 +6,11 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 17:52:39 by jseo              #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/11/03 15:59:18 by jseo             ###   ########.fr       */
+=======
+/*   Updated: 2020/11/03 15:33:39 by jseo             ###   ########.fr       */
+>>>>>>> e3b5b89748b6acebe8e8df9c259a0a571c01f977
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +104,7 @@ void			ft_sort_dict(t_dict *dict)
 	zero_pos = INVALID;
 	while (index < dict->size)
 	{
-		if (dict->entry[index].val == 0)
+		if (dict->entry[index].normal == 0)
 		{
 			zero_pos = index;
 			break ;
@@ -109,6 +113,6 @@ void			ft_sort_dict(t_dict *dict)
 	}
 	if (zero_pos == INVALID)
 		return ;
-	ft_sort_dict_delegate(dict, zero_pos, dict->size - 1, &ft_cmp_entry_value);
-	ft_sort_dict_delegate(dict, 0, zero_pos, &ft_cmp_entry_value);
+	ft_sort_dict_delegate(dict, zero_pos, dict->size - 1, &ft_cmp_entry_key);
+	ft_sort_dict_delegate(dict, 0, zero_pos, &ft_cmp_entry_key);
 }

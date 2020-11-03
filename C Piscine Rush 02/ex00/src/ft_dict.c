@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 18:52:25 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 22:09:32 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 15:16:07 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ int					ft_count_line(char *path)
 		if (error == none_p)
 			++count;
 		if (entry->val == 0 || error == end_of_file)
+		{
+			free(entry);
 			break ;
+		}
 		free(entry);
 	}
 	ft_close_file(fd);
