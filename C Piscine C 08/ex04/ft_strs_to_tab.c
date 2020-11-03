@@ -6,15 +6,16 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 21:24:11 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/03 16:14:44 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/04 03:18:11 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stock_str.h"
+#include <stdlib.h>
 
 int			ft_strlen(char *str)
 {
-	int		index;
+	int			index;
 
 	index = 0;
 	while (*str)
@@ -49,11 +50,19 @@ char		*ft_strdup(char *src)
 
 t_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	int		index;
+	int			index;
 	t_stock_str	*arr;
 
 	index = -1;
+	arr = (t_stock_str *)malloc(sizeof(t_stock_str) * (ac + 1));
+	if (!arr)
+		return (0);
 	while (++index < ac)
 	{
+		arr[index].size = ft_strlen(av[index]);
+		arr[index].str = av[index];
+		arr[index].copy = ft_strdup(av[index]);
 	}
+	arr[index] = (t_stock_str){0, 0, 0};
+	return (arr);
 }

@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 12:00:44 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/03 12:35:27 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/04 03:52:13 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,38 @@
 	//return (0);
 //}
 
-// EX04, EX05
+// EX04
+#include "c08.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 int	main(void)
 {
+	int				index;
+	int				ac;
+	char			**av;
+	t_stock_str		*arr;
+//
+	ac = 10;
+	av = (char **)malloc((ac + 1) * sizeof(char *));
+	index = -1;
+	while (++index < ac)
+	{
+		av[index] = (char *)malloc(2 + 1);
+		av[index][0] = 'x';
+		av[index][1] = '0' + index;
+		av[index][2] = '\0';
+	}
+	arr = ft_strs_to_tab(ac, av);
+	index = -1;
+	while (++index < ac)
+	{
+		printf("%d\n", index);
+		printf("\t| original : $%s$ @ %p\n", arr[index].str, arr[index].str);
+		printf("\t|   copied : $%s$ @ %p\n", arr[index].copy, arr[index].copy);
+		printf("\t|     size : %d\n", arr[index].size);
+	}
+	printf("-----------SHOW TAB\n");
+	ft_show_tab(arr);
+	return (0);
 }

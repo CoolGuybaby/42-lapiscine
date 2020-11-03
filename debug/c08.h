@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_io.c                                            :+:      :+:    :+:   */
+/*   c08.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 11:40:56 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/04 02:40:28 by jseo             ###   ########.fr       */
+/*   Created: 2020/11/04 00:30:17 by jseo              #+#    #+#             */
+/*   Updated: 2020/11/04 03:50:17 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_io.h"
+#ifndef C08_H
+# define C08_H
 
-void		ft_write_string_fd(int fd, char *str)
+typedef struct	s_stock_str
 {
-	while (*str)
-		write(1, str++, 1);
-}
+	int				size;
+	char			*str;
+	char			*copy;
+}				t_stock_str;
 
-void		ft_out_string(char *str)
-{
-	ft_write_string_fd(OUT, str);
-}
+int					ft_strlen(char *str);
+char				*ft_strdup(char *src);
+t_stock_str	*ft_strs_to_tab(int ac, char **av);
+void				ft_putstr(char *str);
+void				ft_putnbr(int nbr);
+void				ft_show_tab(struct s_stock_str *par);
 
-void		ft_err_string(char *str)
-{
-	ft_write_string_fd(ERR, str);
-}
-
-int			ft_open_file(char *path)
-{
-	return (open(path, O_RDONLY));
-}
-
-int			ft_close_file(int fd)
-{
-	return (close(fd));
-}
+#endif

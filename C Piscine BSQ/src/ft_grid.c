@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:10:26 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/03 09:42:21 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/04 02:46:31 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,29 @@ void	ft_free_grid(t_grid *grid)
 		free(grid->content);
 }
 
-void	ft_process_grid(t_grid *grid, t_sol *sol)
+void	ft_print_grid(t_grid *grid, t_sol *sol)
 {
-	// logic
+	t_int	i;
+	t_int	j;
+	t_int	x_start;
+	t_int	y_start;
+
+	x_start = sol->x - sol->size;
+	y_start = sol->y - sol->size;
+	i = 0;
+	while (i < grid->row)
+	{
+		j = 0
+		while (j < grid->col)
+		{
+			if (grid->map[j][i] == 0)
+				write(OUT, &grid[obstacle], 1);
+			else if (i >= y_start && i <= sol->y
+					&& j >= x_start && j <= sol->x)
+				write(OUT, &grid[full], 1);
+			else
+				write(OUT, &grid[empty], 1);
+		}
+		write(OUT, &"\n", 1);
+	}
 }
