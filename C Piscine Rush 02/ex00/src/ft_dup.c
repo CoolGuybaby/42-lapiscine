@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 12:14:40 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 12:08:49 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 10:30:46 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char		*ft_strdup(char *src)
 
 	length = 0;
 	index = 0;
-	while (src[index])
+	while (src[length])
 		++length;
 	copy = (char *)malloc(length + 1);
 	if (!copy)

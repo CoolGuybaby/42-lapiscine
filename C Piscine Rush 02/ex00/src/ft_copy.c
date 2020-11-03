@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 12:11:20 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 19:11:40 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 10:22:35 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char		*ft_strxcpy(char *dest, char *src)
 {
 	while ((*dest++ = *src++))
 		;
-	return (dest);
+	return (--dest);
 }
 
 void		ft_strucpy(char *dest, char *from, char *until)

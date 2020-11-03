@@ -6,12 +6,14 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 21:15:09 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/02 14:13:25 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 09:53:43 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 int			ft_strlen(char *str);
-int			ft_compute_length(char *str);
+int			ft_compute_length(long long nbr, int radix, int neg);
 int			ft_is_in_string(char ch, char *str);
 int			ft_is_valid(char *base);
 

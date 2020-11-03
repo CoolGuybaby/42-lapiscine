@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 21:16:47 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/30 12:05:12 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 10:30:48 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int			ft_cnt(char *str, char *charset)
 
 void		ft_strcpy(char *dest, char *from, char *until)
 {
-	while(from < until)
+	while (from < until)
 		*dest++ = *from++;
 	*dest = 0;
 }
@@ -62,10 +62,10 @@ char		**ft_split(char *str, char *charset)
 			g_from = str;
 			while (*str && !ft_is_in_string(*str, charset))
 				++str;
-			g_bun[g_i] = (char *)malloc((str - g_from) +  1);
-			if(!g_bun[g_i])
+			g_bun[g_i] = (char *)malloc((str - g_from) + 1);
+			if (!g_bun[g_i])
 			{
-				while(--g_i >= 0)
+				while (--g_i >= 0)
 					free(g_bun[g_i]);
 				free(g_bun);
 			}

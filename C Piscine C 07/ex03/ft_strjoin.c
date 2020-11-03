@@ -6,9 +6,12 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 21:15:52 by jseo              #+#    #+#             */
-/*   Updated: 2020/10/31 18:51:19 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 10:30:05 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
+#include <stdio.h>
 
 int			ft_strlen(char *str)
 {
@@ -27,7 +30,7 @@ char		*ft_strxcpy(char *dest, char *src)
 {
 	while ((*dest++ = *src++))
 		;
-	return (dest);
+	return (--dest);
 }
 
 void		ft_complete_str(char *temp, int size, char **strs, char *sep)
