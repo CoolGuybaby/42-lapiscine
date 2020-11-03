@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/31 16:45:38 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 22:19:37 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 15:57:40 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ int	main(int argc, char **argv)
 		show_error(error);
 		return (1);
 	}
+	while(1)
+		;
 	return (0);
 }

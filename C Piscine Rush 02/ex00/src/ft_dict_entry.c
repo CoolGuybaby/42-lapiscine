@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 17:52:39 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/01 22:24:58 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/03 15:59:18 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void			ft_update_normal(t_dict *dict)
 		normal = false;
 		if (entry->key <= 20)
 			normal = true;
-		if (entry->key > 20 || entry->key < 100)
+		if (entry->key > 20 && entry->key < 100)
 			if (entry->key % 10 == 0)
 				normal = true;
 		entry->normal = normal;
