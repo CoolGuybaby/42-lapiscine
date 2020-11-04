@@ -5,34 +5,37 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/11/02 11:32:16 by jseo              #+#    #+#              #
-#    Updated: 2020/11/02 19:52:58 by jseo             ###   ########.fr        #
+#    Created: 2020/11/04 19:11:32 by jseo              #+#    #+#              #
+#    Updated: 2020/11/04 19:25:42 by jseo             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
-CFLAGS = 
-LDFLAGS =
-INCLUDE = -Iinclude/
-SRC_DIR = ./src
-OBJ_DIR = ./obj
-TARGET = BSQ
+CC		= gcc
+CFLAGS		= -Wall -Wextra -Werror -g
+RM		= rm -f
+NAME		= BSQ
+INCS_DIR	= includes
+SRCS_DIR	= ./srcs
+SRCS		= ${wildcard ${SRCS_DIR}/*.c}
+OBJS		= ${SRCS:.c=.o}
 
-SRCS = $(notdir $(wildcard $(SRC_DIR)/*.c))
-OBJS = $(SRCS:.c=.o)
-DEPS = $(SRCS:.c=.d)
+.c.o:
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I${INCS_DIR}
 
-OBJECTS = $(patsubst %.o, $(OBJ_DIR)/%.o, $(OBJS))
-DEPS = $(OBJECTS:.o=.d)
+${NAME}: ${OBJS}
+	${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@ -MD $(LDFLAGS)
+all: ${NAME}
 
-$(TARGET) : $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o $(TARGET) $(LDFLAGS)
+clean:
+	${RM} ${OBJS}
 
-.PHONY : fclean
-fclean :
-	rm -f $(OBJECTS) $(DEPS) $(TARGET)
+fclean: clean
+	${RM} ${NAME}
 
--include $(DEPS)
+re: fclean all
+
+norm:
+	norminette -R CheckForbiddenSoureHeader */*.[ch]
+
+.PHONY: all clean fclean re .c.o norm
