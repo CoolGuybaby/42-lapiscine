@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 16:01:58 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/03 16:02:57 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/04 13:24:34 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 		error = parse;
 	if (error != none_e)
 	{
-		show_error(error);
+		show_error(error, &dict);
 		return (1);
 	}
 	error = ft_exec_conv(conv, &dict);
@@ -33,10 +33,9 @@ int	main(int argc, char **argv)
 		ft_out_string("\n");
 	else
 	{
-		show_error(error);
+		show_error(error, &dict);
 		return (1);
 	}
-	while(1)
-		;
+	ft_free_dict(&dict);
 	return (0);
 }
