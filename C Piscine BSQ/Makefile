@@ -6,12 +6,12 @@
 #    By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/04 19:11:32 by jseo              #+#    #+#              #
-#    Updated: 2020/11/04 19:25:42 by jseo             ###   ########.fr        #
+#    Updated: 2020/11/05 00:17:23 by jseo             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= gcc
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror
 RM		= rm -f
 NAME		= BSQ
 INCS_DIR	= includes

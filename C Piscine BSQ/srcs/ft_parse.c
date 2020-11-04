@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 19:02:53 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/04 20:57:58 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/05 00:15:26 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,17 +80,18 @@ t_bool		ft_parse_grid(t_grid *grid, t_sol *sol, t_int start, t_int total)
 {
 	t_int	previous;
 	t_int	index;
+	t_int	count;
 
 	previous = 0;
 	index = 0;
-	if (!ft_find_col(grid, start, total))
-		return (false);
-	if (!ft_malloc_grid(grid))
+	count = 0;
+	if (!ft_find_col(grid, start, total) || !ft_malloc_grid(grid))
 		return (false);
 	while (index < total - start)
 	{
 		if (grid->content[start + index] == '\n')
 		{
+			++count;
 			if (index - previous != grid->col)
 				return (false);
 			previous = index++ + 1;
@@ -99,6 +100,8 @@ t_bool		ft_parse_grid(t_grid *grid, t_sol *sol, t_int start, t_int total)
 		if (!ft_core(grid, sol, start, index++))
 			return (false);
 	}
+	if (count != grid->row)
+		return (false);
 	return (true);
 }
 
