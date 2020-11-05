@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 19:02:53 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/05 00:15:26 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/05 04:02:37 by ycha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ t_bool		ft_find_col(t_grid *grid, t_int start, t_int total)
 		if (grid->content[index] == '\n')
 		{
 			grid->col = index - start;
+			if (grid->col == 0)
+				return (false);
 			return (true);
 		}
 		++index;
@@ -97,7 +99,7 @@ t_bool		ft_parse_grid(t_grid *grid, t_sol *sol, t_int start, t_int total)
 			previous = index++ + 1;
 			continue;
 		}
-		if (!ft_core(grid, sol, start, index++))
+		if (count >= grid->row || !ft_core(grid, sol, start, index++))
 			return (false);
 	}
 	if (count != grid->row)
@@ -107,24 +109,24 @@ t_bool		ft_parse_grid(t_grid *grid, t_sol *sol, t_int start, t_int total)
 
 t_bool		ft_parse(int fd, t_grid *grid, t_sol *sol)
 {
-	t_char	*content;
 	t_int	total_bytes;
 	t_int	index;
 
+	grid->content = NULL;
+	grid->map = NULL;
 	grid->col = 0;
 	grid->row = 0;
 	sol->y = -1;
 	sol->x = -1;
 	sol->size = 0;
 	index = 0;
-	if (!ft_read_all(fd, &content, &total_bytes))
+	if (!ft_read_all(fd, &(grid->content), &total_bytes))
 		return (false);
-	grid->content = content;
 	while (index < total_bytes)
 	{
-		if (content[index] == '\n')
+		if (grid->content[index] == '\n')
 		{
-			if (!ft_parse_info(grid, content, index))
+			if (!ft_parse_info(grid, grid->content, index))
 				return (false);
 			return (ft_parse_grid(grid, sol, index + 1, total_bytes));
 		}
