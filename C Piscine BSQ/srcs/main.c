@@ -6,7 +6,7 @@
 /*   By: jseo <jseo@student.42seoul.kr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 19:00:39 by jseo              #+#    #+#             */
-/*   Updated: 2020/11/05 00:49:21 by jseo             ###   ########.fr       */
+/*   Updated: 2020/11/13 13:37:51 by jseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void		ft_process_args(int argc, char **argv, t_grid *grid, t_sol *sol)
 			ft_print_grid(grid, sol);
 		else
 			ft_out_string("map error\n");
+        if (index != argc - 1)
+            ft_out_string("\n");
 		if (open && grid)
 			ft_free_grid(grid);
 		++index;
